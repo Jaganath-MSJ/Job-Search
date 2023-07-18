@@ -13,7 +13,7 @@ nav {
 nav input {
     position: relative;
     margin: 20px 0;
-    width: 40em;
+    width: 30em;
     height: 3em;
     padding-left: 20px;
     padding-right: 35px;
@@ -35,7 +35,7 @@ nav input:focus {
 
 nav>ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 nav li {

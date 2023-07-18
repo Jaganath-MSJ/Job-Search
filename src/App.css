@@ -3,6 +3,7 @@
   padding: 0;
   color: white;
   background-color: #171C28;
+  width: max-content;
 }
 
 a {
@@ -11,5 +12,15 @@ a {
 
 .Home {
   display: grid;
-  grid-template-columns: 27% 73%
+  grid-template-columns: 27% 73%;
+}
+
+::-webkit-scrollbar {
+  background-color: #171C28;
+  width: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #323C52;
+  border-radius: 10px;
 }
