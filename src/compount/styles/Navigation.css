@@ -1,0 +1,61 @@
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #303B54;
+    box-shadow: 0 5px 20px black;
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+nav input {
+    position: relative;
+    margin: 20px 0;
+    width: 40em;
+    height: 3em;
+    padding-left: 20px;
+    padding-right: 35px;
+    background-color: #242D40;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: white;
+}
+
+nav input:focus {
+    box-shadow: 0px 1px 3px black;
+}
+
+.searchIcon {
+    margin: 30px 0 0 -30px;
+    position: absolute;
+}
+
+nav>ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav li {
+    margin: 0px 20px;
+    padding: 5px 5px 10px 10px;
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    list-style: none;
+    position: relative;
+    background-color: #242D40;
+    cursor: pointer;
+    transform: .5s;
+}
+
+nav li:hover {
+    box-shadow: 0px 2px 4px black;
+    transition: .5s;
+}
+
+.icon {
+    color: white;
+}

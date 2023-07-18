@@ -1,0 +1,90 @@
+.filters {
+    margin: 40px;
+    margin-top: 8em;
+    padding: 10px;
+    background-color: #171C28;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 20em;
+    height: max-content;
+}
+
+.filterHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filterHeader button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.filterHeader button:hover {
+    text-decoration: underline;
+}
+
+.line {
+    height: .5px;
+    width: 100%;
+    background-color: gray;
+}
+
+.checkBox {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.checkBox>div {
+    display: flex;
+    margin: -20px 0;
+}
+
+.checkHeader {
+    justify-content: space-between;
+}
+
+.checkHeader>button {
+    margin-top: 5px;
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.click {
+    display: flex;
+    position: relative;
+}
+
+.box {
+    display: flex;
+    padding: 15px 0;
+    transition: 1s;
+}
+
+.box>input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.box>input:checked::before {
+    content: "\2714";
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    color: red;
+    background-color: white;
+    padding-bottom: -10px;
+}
+
+.box>p {
+    margin: 0 7px;
+}

@@ -1,0 +1,15 @@
+.App {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: #171C28;
+}
+
+a {
+  text-decoration: none;
+}
+
+.Home {
+  display: grid;
+  grid-template-columns: 27% 73%
+}
