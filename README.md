@@ -1,7 +1,7 @@
 # Job Search
 ### View Deploy: [Click Here](https://msj-job-search.netlify.app)
 
-[![Job Search](./Job%Search.png)](https://msj-job-search.netlify.app)
+[![Job Search](./Job%20Search.png)](https://msj-job-search.netlify.app)
 
 ## Build With
 This project was built using these technologies:
