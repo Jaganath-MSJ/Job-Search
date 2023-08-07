@@ -26,27 +26,22 @@ export const datePostedFilter = (posteddate, filter) => {
     case "Last 24 hours":
       timeDiff = currentDate - postedDate;
       hoursDiff = timeDiff / (1000 * 60 * 60);
-      console.log("24",hoursDiff);
       return hoursDiff <= 24;
     case "Last 48 hours":
       timeDiff = currentDate - postedDate;
       hoursDiff = timeDiff / (1000 * 60 * 60);
-      console.log("48",hoursDiff);
       return hoursDiff <= 48;
     case "Last 7 days":
       timeDiff = currentDate - postedDate;
       daysDiff = timeDiff / (1000 * 60 * 60 * 24);
-      console.log("7",daysDiff);
       return daysDiff <= 7;
     case "Last 14 days":
       timeDiff = currentDate - postedDate;
       daysDiff = timeDiff / (1000 * 60 * 60 * 24);
-      console.log("17",daysDiff);
       return daysDiff <= 14;
     case "Last Month":
       timeDiff = currentDate - postedDate;
       daysDiff = timeDiff / (1000 * 60 * 60 * 24);
-      console.log("month",daysDiff);
       return daysDiff <= 30;
     default: return false;
   }

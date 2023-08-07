@@ -11,7 +11,7 @@ import { useContext } from "react";
 function Navigation() {
   const {searchJobs, setSearchJobs} = useContext(SearchContext);
   const handleSearchJobs = (e) => {
-    setSearchJobs(e.target.value);
+    setSearchJobs(e.target.value.trim());
   }
 
   return (
