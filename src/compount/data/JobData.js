@@ -322,7 +322,6 @@ export const Data = {
           soft_skills: "Understanding",
           job_location:
             "Ahmedabad (Gujarat), Gandhinagar (Gujarat), Vadodara (Gujarat)",
-          date_string: "2023-06-01 00:00:00.000",
           closing_date: "15/12/2022",
           key_skills:
             "Servlets,Java,Jsp,J2ee,Spring,Hibernate,Struts,Eclipse,Java Full Stack,Java Developer,Advanced Java J2EE,Core Java,Jdbc,Javascript,Java Beans,html",
@@ -369,7 +368,6 @@ export const Data = {
           roles: "Senior Software Developer  (Java   Angular)",
           soft_skills: "Understanding,Integration",
           job_location: "Gandhinagar (Gujarat), Pune (Maharashtra)",
-          date_string: "2023-07-05 00:00:00.000",
           closing_date: "27/04/2023",
           key_skills:
             "css,html5,bootstrap,hibernate,sql,spring,advanced java,java,git,postgresql,testing tools,senior software developer,soap web services,j2ee,json,jpa,rest,junit,maven,j2se,gradle,spring boot",

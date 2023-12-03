@@ -1,4 +1,5 @@
 import { calculateYearsMonthsDays } from "./Utils";
+import PropTypes from "prop-types";
 
 import CompanyLogo from "./img/CompanyLogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -36,7 +37,7 @@ function JobDetails({ job }) {
       <div className="buttonDetails">
         <div className="applyDetails">
           <p>
-            Posted {calculateYearsMonthsDays(new Date(job.date_string+" "))} .{" "}
+            Posted {calculateYearsMonthsDays(new Date(job.date_string + " "))} .{" "}
             {job.count_applied} applicants
           </p>
         </div>
@@ -52,5 +53,9 @@ function JobDetails({ job }) {
     </div>
   );
 }
+
+JobDetails.propTypes = {
+  job: PropTypes.object.isRequired,
+};
 
 export default JobDetails;
