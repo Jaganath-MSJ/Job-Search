@@ -1,4 +1,5 @@
 import JobDetails from "./JobDetails";
+import PropTypes from "prop-types";
 
 import "./styles/Jobs.css";
 
@@ -21,7 +22,7 @@ function Jobs({ items }) {
       </div>
       <div className="jobs">
         <div>
-          <div className="jobHeader"></div>
+          <div className="jobHeader" />
           <div className="jobTitle">
             <h3>Jobs</h3>
           </div>
@@ -37,5 +38,9 @@ function Jobs({ items }) {
     </div>
   );
 }
+
+Jobs.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default Jobs;

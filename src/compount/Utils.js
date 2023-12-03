@@ -10,18 +10,18 @@ export const calculateYearsMonthsDays = (date) => {
 
   return year === 0 && month === 0 && day === 0
     ? "Today "
-    : (year > 0 ? year + " years " : "") +
-        (month > 0 ? month + " months " : "") +
-        (day > 0 ? day + " days " : "") +
+    : (year > 0 && year + " years ") +
+        (month > 0 && month + " months ") +
+        (day > 0 && day + " days ") +
         "ago";
 };
 
 export const datePostedFilter = (posteddate, filter) => {
-  var postedDate = new Date(posteddate + " ");
-  var currentDate = new Date();
-  var timeDiff;
-  var hoursDiff;
-  var daysDiff;
+  let postedDate = new Date(posteddate + " ");
+  let currentDate = new Date();
+  let timeDiff;
+  let hoursDiff;
+  let daysDiff;
   switch (filter) {
     case "Last 24 hours":
       timeDiff = currentDate - postedDate;
@@ -43,6 +43,7 @@ export const datePostedFilter = (posteddate, filter) => {
       timeDiff = currentDate - postedDate;
       daysDiff = timeDiff / (1000 * 60 * 60 * 24);
       return daysDiff <= 30;
-    default: return false;
+    default:
+      return false;
   }
 };

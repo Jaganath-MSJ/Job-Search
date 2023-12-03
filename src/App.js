@@ -1,16 +1,15 @@
 import "./App.css";
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Data from "./compount/data/JobData";
 import Navigation from "./compount/Navigation";
 import Filters from "./compount/Filters";
 import Jobs from "./compount/Jobs";
 import { SearchContext } from "./compount/SearchContext";
 import { FilterContext } from "./compount/FilterContext";
-import { datePostedFilter } from "./compount/Utils"
+import { datePostedFilter } from "./compount/Utils";
 
 function App() {
-  const [searchJobs, setSearchJobs] = useState();
+  const [searchJobs, setSearchJobs] = useState("");
   const [location, setLocation] = useState([]);
   const [company, setCompany] = useState([]);
   const [jobSource, setJobSource] = useState([]);
@@ -21,13 +20,10 @@ function App() {
   const [skills, setSkills] = useState([]);
 
   const [filtered, setFiltered] = useState([]);
-
-  const main = Data.jobs.items;
-  const job = Object.values(main);
-  const allJobs = [];
-  job.forEach((value) => {
-    return allJobs.push(value._source);
-  });
+  const allJobs = useMemo(
+    () => Data.jobs.items.map((value) => value._source),
+    []
+  );
 
   useEffect(() => {
     let res = allJobs;
@@ -81,6 +77,7 @@ function App() {
     salaryRange,
     datePosted,
     skills,
+    allJobs,
   ]);
 
   const allFilters = [
@@ -98,33 +95,54 @@ function App() {
     return y.length > 0 ? x + 1 : x;
   }, 0);
 
+  const searchContextValue = useMemo(
+    () => ({
+      searchJobs,
+      setSearchJobs,
+    }),
+    [searchJobs]
+  );
+
+  const filterContextValue = useMemo(
+    () => ({
+      SelectedCount,
+      location,
+      company,
+      jobSource,
+      experience,
+      education,
+      salaryRange,
+      datePosted,
+      skills,
+      setLocation,
+      setCompany,
+      setJobSource,
+      setExperience,
+      setEducation,
+      setSalaryRange,
+      setDatePosted,
+      setSkills,
+    }),
+    [
+      SelectedCount,
+      location,
+      company,
+      jobSource,
+      experience,
+      education,
+      salaryRange,
+      datePosted,
+      skills,
+    ]
+  );
+
   return (
     <div className="App">
-      <SearchContext.Provider value={{ searchJobs, setSearchJobs }}>
+      <SearchContext.Provider value={searchContextValue}>
         <Navigation />
       </SearchContext.Provider>
       <div className="Home">
-        <FilterContext.Provider
-          value={{
-            SelectedCount,
-            location,
-            company,
-            jobSource,
-            experience,
-            education,
-            salaryRange,
-            datePosted,
-            skills,
-            setLocation,
-            setCompany,
-            setJobSource,
-            setExperience,
-            setEducation,
-            setSalaryRange,
-            setDatePosted,
-            setSkills,
-          }}
-        >
+        <FilterContext.Provider value={filterContextValue}>
           <Filters />
         </FilterContext.Provider>
         <Jobs items={filtered} />
